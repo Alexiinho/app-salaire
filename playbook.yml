@@ -1,7 +1,5 @@
----
-
-- name: installation du serveur web
+- name: install roles
   hosts: all
   roles:
     - apache
-    -mariadb
+    - mariadb
