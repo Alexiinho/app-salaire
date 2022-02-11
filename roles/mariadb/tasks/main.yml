@@ -21,3 +21,6 @@
     name: mariadb
     enabled: yes
     state: enabled
+
+
+# tasks file for mariadb
