@@ -1,5 +1,5 @@
 node{
-      stage('Deploy') {
+      stage('Deploiement') {
           checkout scm
       }
       stage('Connexion ssh'){
@@ -14,7 +14,7 @@ node{
         
             
       }
-      stage('Playbook') {
+      stage('Ansible') {
         ansiblePlaybook (
             colorized: true,          
             playbook: 'playbook.yml',
