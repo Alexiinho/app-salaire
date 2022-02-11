@@ -1,0 +1,6 @@
+---
+# tasks file for apache
+ - name: generation cle
+    module: user
+    name: root
+    generate_ssh_keys: yes
