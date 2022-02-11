@@ -1,0 +1,5 @@
+- name: installation du serveur web
+  hosts: all
+  roles:
+    - apache
+    -mariadb
