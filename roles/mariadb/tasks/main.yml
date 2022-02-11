@@ -7,13 +7,13 @@
     - mariadb-server
    state: present
 
-- name: redémarrage du service mariadb
+- name: redemarrage du service mariadb
   systemd:
     name: mariadb
     enabled: yes
     state: restarted
 
-- name: Installation sécurisée Mysql
+- name: Installation securisee Mysql
   command: 'echo "& y y Mypasswd Mypasswd y y y y" | ./usr/bin/mysql_secure_installation'
 
 - name: enable systemd mariadb service
