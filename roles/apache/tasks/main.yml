@@ -33,9 +33,9 @@
 #   path: /var/www/html/index.html
 #   state: absent
    
- - name: copie app
+ - name: copie files
    copy:
-     src: app/
+     src: files/
      dest: /var/www/html
 
 
