@@ -1,6 +1,6 @@
 ---
 
-- name: Installation packages
+- name: Installation des paquets
   yum:
     name:
       - httpd
@@ -8,25 +8,25 @@
       - php-mysql
     state: present
 
-- name: restart and enable apache
+- name: Redémarrage Apache
   systemd:
     name: httpd
     enabled: yes
     state: restarted
 
-- name: ouvrir port 80
+- name: ouverture du port 80 pour l'accès en HTTP
   firewalld:
     port: http
     permanent: yes
     state: enabled
     immediate: true
     
-- name: reload firewall
+- name: reload du firewall
   systemd:
     firewalld: http
     state: reloaded
 
-- name: droit d'ecriture sur dossier http
+- name: Droite d'accès au dossier HTTP
   file:
    path: /var/www/html
    state: directory
