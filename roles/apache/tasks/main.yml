@@ -8,13 +8,13 @@
       - php-mysql
     state: present
 
-- name: Redémarrage Apache
+- name: Redemarrage Apache
   systemd:
     name: httpd
     enabled: yes
     state: restarted
 
-- name: ouverture du port 80 pour l'accès en HTTP
+- name: ouverture du port 80 pour l'acces en HTTP
   firewalld:
     port: http
     permanent: yes
@@ -26,7 +26,7 @@
     firewalld: http
     state: reloaded
 
-- name: Droite d'accès au dossier HTTP
+- name: Droite d'acces au dossier HTTP
   file:
    path: /var/www/html
    state: directory
