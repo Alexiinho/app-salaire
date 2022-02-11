@@ -19,6 +19,7 @@
     port: http
     permanent: yes
     state: enabled
+    immediate: true
     
 - name: reload firewall
   systemd:
