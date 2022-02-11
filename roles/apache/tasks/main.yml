@@ -1,6 +1,43 @@
 ---
+
+- name: Installation packages
+  yum:
+    name:
+      - git
+      - epel-release
+      - httpd
+      - php
+      - php-mysql
+    state: present
+
+- name: restart and enable apache
+  systemd:
+    name: httpd
+    enabled: yes
+    state: restarted
+
+- name: ouvrir port 80
+  firewalld:
+    port: http
+    permanent: yes
+    state: enabled
+
+- name: droit d'ecriture sur dossier http
+  file:
+   path: /var/www/html
+   state: directory
+   mode: 0755
+   
+#- name: Supression du fichier index.html par défaut
+#  file:
+#   path: /var/www/html/index.html
+#   state: absent
+   
+ - name: copie app
+   copy:
+     src: app/
+     dest: /var/www/html
+
+
+
 # tasks file for apache
- - name: generation cle
-    module: user
-    name: root
-    generate_ssh_keys: yes
