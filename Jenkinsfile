@@ -1,5 +1,5 @@
 node{
-      stage('Clone') {
+      stage('Deploy') {
           checkout scm
       }
       stage('Connexion ssh'){
